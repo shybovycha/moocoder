@@ -1,0 +1,18 @@
+<h1>Listing problems</h1>
+
+<% @problems.each do |problem| %>
+  <h3><%= link_to problem.title, problem %></h3>
+  <p>
+    <%= problem.body.html_safe %>
+    <br /><br />
+    <%= link_to 'Add test case', "add_test/#{ problem.id }" %> | 
+    <%= link_to 'Edit', edit_problem_path(problem) %> | 
+    <%= link_to 'Destroy', problem, :confirm => 'Are you sure?', :method => :delete %>
+  </p>
+<% end %>
+
+<br />
+
+<%= link_to 'New Problem', new_problem_path %> | 
+<%= link_to 'New Solution', new_solution_path %> | 
+<%= link_to 'New Compiler', new_compiler_path %>

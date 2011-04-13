@@ -1,0 +1,29 @@
+<%= form_for(@solution) do |f| %>
+  <% if @solution.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@solution.errors.count, "error") %> prohibited this solution from being saved:</h2>
+
+      <ul>
+      <% @solution.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :problem_id %><br />
+    <%= f.select :problem_id, Problem.all.map { |p| [p.title, p.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :compiler %><br />
+    <%= f.select :compiler, Compiler.all.map { |c| [c.title, c.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_area :code %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @problem.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @problem.body %>
+</p>
+
+<p>
+  <b>Time limit:</b>
+  <%= @problem.time_limit %>
+</p>
+
+<p>
+  <b>Examples:</b>
+  <p>
+    <%= @problem.examples.html_safe %>
+  </p>
+</p>
+
+<%= link_to 'Solve', new_solution_path(:problem => @problem) %> | 
+<%= link_to 'Test cases', test_cases_path(:problem => @problem) %> | 
+<%= link_to 'Edit', edit_problem_path(@problem) %> |
+<%= link_to 'Back', problems_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  body: MyText
+  time_limit: 1.5
+  examples: MyText
+
+two:
+  title: MyString
+  body: MyText
+  time_limit: 1.5
+  examples: MyText

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  problem_id: 1
+  code: MyText
+  passed: 1
+  status: MyString
+
+two:
+  problem_id: 1
+  code: MyText
+  passed: 1
+  status: MyString
