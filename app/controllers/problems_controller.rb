@@ -13,7 +13,7 @@ class ProblemsController < ApplicationController
   # GET /problems/1
   # GET /problems/1.xml
   def show
-    @problem = Problem.find(params[:id])
+    @problem = Problem.find(params[:id] || params[:problem_id])
 
     respond_to do |format|
       format.html # show.html.erb

@@ -4,6 +4,7 @@
   <tr>
     <th>Title</th>
     <th>Cmd line</th>
+    <th>File ext</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= compiler.title %></td>
     <td><%= compiler.cmd_line %></td>
+    <td><%= compiler.ext %></td>
     <td><%= link_to 'Show', compiler %></td>
     <td><%= link_to 'Edit', edit_compiler_path(compiler) %></td>
     <td><%= link_to 'Destroy', compiler, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -20,6 +22,7 @@
 <% end %>
 </table>
 
-<br />
+<br /><hr />
 
-<%= link_to 'New Compiler', new_compiler_path %>
+<%= link_to 'New Compiler', new_compiler_path %> | 
+<%= link_to 'Problems', problems_path %>

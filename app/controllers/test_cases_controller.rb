@@ -47,7 +47,7 @@ class TestCasesController < ApplicationController
   # POST /test_cases.xml
   def create
     @test_case = TestCase.new(params[:test_case])
-    @test_case.problem = Problem.find(params[:problem])
+    @test_case.problem = Problem.find(params[:problem] || params[:test_case][:problem_id])
 
     respond_to do |format|
       if @test_case.save

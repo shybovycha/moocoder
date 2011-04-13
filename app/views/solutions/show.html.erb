@@ -16,15 +16,11 @@
 </p>
 
 <p>
-  <b>Passed:</b>
-  <%= @solution.passed %>
-</p>
-
-<p>
   <b>Status:</b>
   <%= @solution.status %>
 </p>
 
 
 <%= link_to 'Edit', edit_solution_path(@solution) %> |
-<%= link_to 'Back', solutions_path %>
+<%= link_to 'Solutions', solutions_path %> | 
+<%= link_to 'Problems', problems_path %>

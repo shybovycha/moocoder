@@ -10,13 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110411231423) do
+ActiveRecord::Schema.define(:version => 20110413190600) do
 
   create_table "compilers", :force => true do |t|
     t.string   "title"
     t.text     "cmd_line"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ext"
+    t.boolean  "compiled"
   end
 
   create_table "problems", :force => true do |t|

@@ -1,25 +1,19 @@
 <h1>Listing solutions</h1>
 
-<table>
+<table style="width: 100%; text-align: center;">
   <tr>
     <th>Problem</th>
     <th>Compiler</th>
-    <th>Code</th>
-    <th>Passed</th>
     <th>Status</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @solutions.each do |solution| %>
   <tr>
-    <td><%= solution.problem_id %></td>
+    <td><%= link_to solution.problem.title, solution.problem %></td>
     <td><%= solution.compiler.title %></td>
-    <td><%= solution.code %></td>
-    <td><%= solution.passed %></td>
-    <td><%= solution.status %></td>
-    <td><%= link_to 'Show', solution %></td>
+    <td><%= link_to solution.status, solution %></td>
     <td><%= link_to 'Edit', edit_solution_path(solution) %></td>
     <td><%= link_to 'Destroy', solution, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -28,4 +22,5 @@
 
 <br />
 
-<%= link_to 'New Solution', new_solution_path %>
+<%= link_to 'New Solution', new_solution_path %> | 
+<%= link_to 'Problems', problems_path %>
