@@ -13,7 +13,11 @@ class ProblemsController < ApplicationController
   # GET /problems/1
   # GET /problems/1.xml
   def show
-    @problem = Problem.find(params[:id] || params[:problem_id])
+	#if (request.subdomain && request.subdomain.to_i > 0)
+	#	@problem = Problem.find(request.subdomain)
+	#else
+		@problem = Problem.find(params[:id] || params[:problem_id])
+	#end
 
     respond_to do |format|
       format.html # show.html.erb

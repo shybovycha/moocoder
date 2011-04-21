@@ -12,6 +12,7 @@
 	<ul>
 		<li><%= link_to "Problems", problems_path %></li>
 		<li><%= link_to "Solve", new_solution_path %></li>
+		<li><%= link_to "Solutions", solutions_path %></li>
 		<% if auth? %>
 			<li><!%= link_to "Log out", "/root/auth" %></li>
 		<% else %>
