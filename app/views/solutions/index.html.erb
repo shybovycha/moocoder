@@ -5,8 +5,10 @@
     <th>Problem</th>
     <th>Compiler</th>
     <th>Status</th>
-    <th></th>
-    <th></th>
+    <% if auth? %>
+		<th></th>
+		<th></th>
+	<% end %>
   </tr>
 
 <% @solutions.each do |solution| %>
@@ -14,13 +16,11 @@
     <td><%= link_to solution.problem.title, solution.problem %></td>
     <td><%= solution.compiler.title %></td>
     <td><%= link_to solution.status, solution %></td>
-    <td><%= link_to 'Edit', edit_solution_path(solution) %></td>
-    <td><%= link_to 'Destroy', solution, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% if auth? %>
+		<td><%= link_to 'Edit', edit_solution_path(solution) %></td>
+		<td><%= link_to 'Destroy', solution, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Solution', new_solution_path %> | 
-<%= link_to 'Problems', problems_path %>

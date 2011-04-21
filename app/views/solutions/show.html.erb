@@ -21,6 +21,4 @@
 </p>
 
 
-<%= link_to 'Edit', edit_solution_path(@solution) %> |
-<%= link_to 'Solutions', solutions_path %> | 
-<%= link_to 'Problems', problems_path %>
+<%= link_to 'Edit', edit_solution_path(@solution) if auth? %>

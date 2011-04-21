@@ -8,6 +8,18 @@
 </head>
 <body>
 
+<div class="top-menu">
+	<ul>
+		<li><%= link_to "Problems", problems_path %></li>
+		<li><%= link_to "Solve", new_solution_path %></li>
+		<% if auth? %>
+			<li><!%= link_to "Log out", "/root/auth" %></li>
+		<% else %>
+			<li><!%= link_to "Admin page", "/root/auth" %></li>
+		<% end %>
+	</ul>
+</div>
+
 <%= yield %>
 
 </body>

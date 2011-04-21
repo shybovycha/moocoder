@@ -6,51 +6,32 @@ body, p, ol, ul, td {
   line-height: 18px;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+.top-menu {
+	background-color: #449959;
+	width: 100%;
+	text-align: center;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
-
-div.field, div.actions {
-  margin-bottom: 10px;
+.top-menu ul {
+	display: inline;
+	font-size: 12pt;
 }
 
-#notice {
-  color: green;
+.top-menu ul li {
+	display: inline;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+.top-menu ul li:hover {
+	background-color: #3F774D;
 }
 
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+a {
+	color: #E51E1E;
+	text-decoration: none;
 }
 
-#error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  margin-bottom: 0px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
+a:visited {
+	color: #A52A2A;
 }

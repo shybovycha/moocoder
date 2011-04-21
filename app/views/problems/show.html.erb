@@ -23,6 +23,8 @@
 </p>
 
 <%= link_to 'Solve', new_solution_path(:problem => @problem) %> | 
-<%= link_to 'Test cases', test_cases_path(:problem => @problem) %> | 
-<%= link_to 'Edit', edit_problem_path(@problem) %> |
+<% if auth? %>
+	<%= link_to 'Test cases', test_cases_path(:problem => @problem) %> | 
+	<%= link_to 'Edit', edit_problem_path(@problem) %> |
+<% end %>
 <%= link_to 'Back', problems_path %>

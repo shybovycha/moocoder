@@ -1,4 +1,8 @@
 Moocoder::Application.routes.draw do
+  get "root/index"
+
+  get "admin/index"
+
   resources :compilers
 
   resources :solutions
@@ -8,6 +12,8 @@ Moocoder::Application.routes.draw do
   root :to => "problems#index"
   match "solve(/:problem)" => "solutions#new"
   match "add_test(/:problem)" => "test_cases#new"
+
+  match ":controller(/:action)"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
