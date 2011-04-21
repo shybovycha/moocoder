@@ -2,7 +2,7 @@ Moocoder::Application.routes.draw do
   #get "root/index"
   #get "admin/index"
   
-  match '/' => "problems#show", :constraints => { :subdomain => /.+/ }
+  #match '/' => "problems#show", :constraints => { :subdomain => /.+/ }
 
   resources :compilers
 
