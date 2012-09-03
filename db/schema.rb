@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110413190600) do
+ActiveRecord::Schema.define(:version => 20120903111846) do
 
   create_table "compilers", :force => true do |t|
     t.string   "title"

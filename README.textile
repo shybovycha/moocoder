@@ -1,0 +1,25 @@
+h1. mooCoder
+
+h2. Description
+
+This is a very simple online contest system, written with RoR.
+You are allowed to modify it with the only one condition: publish your changes.
+
+Thanks for troubletaking!
+
+h2. Installation
+
+You shall need a *Rails-ready*, *Linux-based* machine with *pre-installed g++ compiler at least*.
+
+When you extracted sources somewhere, follow these simple steps to get started:
+
+# @[su]#: bundle install@
+# @bundle exec rake db:migrate@
+# @rails server@
+
+This will install application dependencies, start the application and get you ready with one sample problem.
+
+h2. Updates
+
+Note there is a newer version of this software, *(mooCoder 2):https://github.com/shybovycha/mooCoder2*. 
+It is made with *Groovy* and *PHP* and is less platform-dependent.
