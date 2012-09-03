@@ -21,5 +21,10 @@ This will install application dependencies, start the application and get you re
 
 h2. Updates
 
-Note there is a newer version of this software, *(mooCoder 2):https://github.com/shybovycha/mooCoder2*. 
-It is made with *Groovy* and *PHP* and is less platform-dependent.
+Note there is a newer version of this software, *"mooCoder 2":https://github.com/shybovycha/mooCoder2*. 
+
+It is made with *Groovy* and *PHP* and is less platform-dependent. Also, it has pretty front-end part:
+# a nice JavaScript-based editor to make entering code easier
+# users now have accounts
+# administration is performed with a Java GUI-utilitie
+# users have rankings, based on points, gathered solving problems
