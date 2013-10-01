@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  got: MyText
+  expected: MyText
+
+two:
+  got: MyText
+  expected: MyText

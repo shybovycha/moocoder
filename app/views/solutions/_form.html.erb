@@ -12,17 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :problem_id %><br />
-    <%= f.select :problem_id, Problem.all.map { |p| [p.title, p.id] } %>
+    Core:<br/>
+    <%= f.text_area :body %>
   </div>
+
   <div class="field">
-    <%= f.label :compiler %><br />
-    <%= f.select :compiler, Compiler.all.map { |c| [c.title, c.id] } %>
+    Compiler:<br>
+    <select name="compiler_id">
+      <% Compiler.all.each do |compiler| %>
+        <option value="<%= compiler.id %>"><%= compiler.title %></option>
+      <% end %>
+    </select>
   </div>
-  <div class="field">
-    <%= f.label :code %><br />
-    <%= f.text_area :code %>
-  </div>
+
+  <input type="hidden" name="problem_id" value="<%= params[:problem_id] %>" />
+
   <div class="actions">
     <%= f.submit %>
   </div>

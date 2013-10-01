@@ -1,13 +1,9 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  problem_id: 1
-  code: MyText
-  passed: 1
+  body: MyText
   status: MyString
 
 two:
-  problem_id: 1
-  code: MyText
-  passed: 1
+  body: MyText
   status: MyString

@@ -1,87 +1,74 @@
 class ProblemsController < ApplicationController
+  before_action :set_problem, only: [:show, :edit, :update, :destroy]
+
   # GET /problems
-  # GET /problems.xml
+  # GET /problems.json
   def index
     @problems = Problem.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @problems }
-    end
   end
 
   # GET /problems/1
-  # GET /problems/1.xml
+  # GET /problems/1.json
   def show
-	#if (request.subdomain && request.subdomain.to_i > 0)
-	#	@problem = Problem.find(request.subdomain)
-	#else
-		@problem = Problem.find(params[:id] || params[:problem_id])
-	#end
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @problem }
-    end
   end
 
   # GET /problems/new
-  # GET /problems/new.xml
   def new
     @problem = Problem.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @problem }
-    end
   end
 
   # GET /problems/1/edit
   def edit
-    @problem = Problem.find(params[:id])
   end
 
   # POST /problems
-  # POST /problems.xml
+  # POST /problems.json
   def create
-    @problem = Problem.new(params[:problem])
+    @problem = Problem.new(problem_params)
 
     respond_to do |format|
       if @problem.save
-        format.html { redirect_to(@problem, :notice => 'Problem was successfully created.') }
-        format.xml  { render :xml => @problem, :status => :created, :location => @problem }
+        format.html { redirect_to @problem, notice: 'Problem was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @problem }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @problem.errors, :status => :unprocessable_entity }
+        format.html { render action: 'new' }
+        format.json { render json: @problem.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PUT /problems/1
-  # PUT /problems/1.xml
+  # PATCH/PUT /problems/1
+  # PATCH/PUT /problems/1.json
   def update
-    @problem = Problem.find(params[:id])
-
     respond_to do |format|
-      if @problem.update_attributes(params[:problem])
-        format.html { redirect_to(@problem, :notice => 'Problem was successfully updated.') }
-        format.xml  { head :ok }
+      if @problem.update(problem_params)
+        format.html { redirect_to @problem, notice: 'Problem was successfully updated.' }
+        format.json { head :no_content }
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @problem.errors, :status => :unprocessable_entity }
+        format.html { render action: 'edit' }
+        format.json { render json: @problem.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /problems/1
-  # DELETE /problems/1.xml
+  # DELETE /problems/1.json
   def destroy
-    @problem = Problem.find(params[:id])
     @problem.destroy
-
     respond_to do |format|
-      format.html { redirect_to(problems_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to problems_url }
+      format.json { head :no_content }
     end
   end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_problem
+      @problem = Problem.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def problem_params
+      params.require(:problem).permit(:title, :body, :time_limit, :memory_limit)
+    end
 end

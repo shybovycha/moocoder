@@ -1,26 +1,29 @@
 <h1>Listing solutions</h1>
 
-<table style="width: 100%; text-align: center;">
-  <tr>
-    <th>Problem</th>
-    <th>Compiler</th>
-    <th>Status</th>
-    <% if auth? %>
-		<th></th>
-		<th></th>
-	<% end %>
-  </tr>
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<% @solutions.each do |solution| %>
-  <tr>
-    <td><%= link_to solution.problem.title, solution.problem %></td>
-    <td><%= solution.compiler.title %></td>
-    <td><%= link_to solution.status, solution %></td>
-    <% if auth? %>
-		<td><%= link_to 'Edit', edit_solution_path(solution) %></td>
-		<td><%= link_to 'Destroy', solution, :confirm => 'Are you sure?', :method => :delete %></td>
+  <tbody>
+    <% @solutions.each do |solution| %>
+      <tr>
+        <td><%= solution.body %></td>
+        <td><%= solution.status %></td>
+        <td><%= link_to 'Show', solution %></td>
+        <td><%= link_to 'Edit', edit_solution_path(solution) %></td>
+        <td><%= link_to 'Destroy', solution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
-  </tr>
-<% end %>
+  </tbody>
 </table>
 
+<br>
+
+<%= link_to 'New Solution', new_solution_path %>

@@ -1,42 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <strong>Title:</strong>
   <%= @problem.title %>
 </p>
 
 <p>
-  <b>Body:</b>
+  <strong>Body:</strong>
   <%= @problem.body %>
 </p>
 
 <p>
-  <b>Time limit:</b>
+  <strong>Time limit:</strong>
   <%= @problem.time_limit %>
 </p>
 
 <p>
-  <b>Examples:</b>
-  <p>
-    <%= @problem.examples.html_safe %>
-  </p>
+  <strong>Memory limit:</strong>
+  <%= @problem.memory_limit %>
 </p>
 
-<!--
-<%= link_to 'Solve', new_solution_path(:problem => @problem) %> | 
-<% if auth? %>
-	<%= link_to 'Test cases', test_cases_path(:problem => @problem) %> | 
-	<%= link_to 'Edit', edit_problem_path(@problem) %> |
-<% end %>
+<%= link_to 'Edit', edit_problem_path(@problem) %> |
 <%= link_to 'Back', problems_path %>
--->
-<% a = [['Solve', new_solution_path(:problem => @problem)]] %>
-<% 
-if auth?
-	a << ['Test cases', test_cases_path(:problem => @problem)]
-	a << ['Edit', edit_problem_path(@problem)]
-end
-
-a << ['Back', problems_path]
-%>
-<%= link_bunch(a) %>

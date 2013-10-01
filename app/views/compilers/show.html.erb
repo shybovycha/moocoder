@@ -1,15 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
-  <%= @compiler.title %>
+  <strong>Name:</strong>
+  <%= @compiler.name %>
 </p>
 
 <p>
-  <b>Cmd line:</b>
-  <%= @compiler.cmd_line %>
+  <strong>Command:</strong>
+  <%= @compiler.command %>
 </p>
-
 
 <%= link_to 'Edit', edit_compiler_path(@compiler) %> |
 <%= link_to 'Back', compilers_path %>

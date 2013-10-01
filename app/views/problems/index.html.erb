@@ -1,21 +1,33 @@
-<% @problems.each do |problem| %>
-  <h3><%= link_to problem.title, problem %></h3>
-  <p>
-    <%= problem.body.html_safe %>
-    <br /><br />
-    <%= link_to 'Solve', new_solution_path(:problem => problem) %> | 
-    <% if auth? %>
-		<%= link_to 'Add test case', "add_test/#{ problem.id }" %> | 
-		<%= link_to 'Edit', edit_problem_path(problem) %> | 
-		<%= link_to 'Destroy', problem, :confirm => 'Are you sure?', :method => :delete %>
-	<% end %>
-  </p>
-<% end %>
+<h1>Listing problems</h1>
 
-<% if auth? %>
-	<br /><hr />
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Time limit</th>
+      <th>Memory limit</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-	<%= link_to 'New Problem', new_problem_path %> | 
-	<%= link_to 'New Solution', new_solution_path %> | 
-	<%= link_to 'New Compiler', new_compiler_path %>
-<% end %>
+  <tbody>
+    <% @problems.each do |problem| %>
+      <tr>
+        <td><%= problem.title %></td>
+        <td><%= problem.body %></td>
+        <td><%= problem.time_limit %></td>
+        <td><%= problem.memory_limit %></td>
+        <td><%= link_to 'Show', problem %></td>
+        <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
+        <td><%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Problem', new_problem_path %>

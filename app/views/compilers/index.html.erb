@@ -1,28 +1,29 @@
 <h1>Listing compilers</h1>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Cmd line</th>
-    <th>File ext</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Command</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<% @compilers.each do |compiler| %>
-  <tr>
-    <td><%= compiler.title %></td>
-    <td><%= compiler.cmd_line %></td>
-    <td><%= compiler.ext %></td>
-    <td><%= link_to 'Show', compiler %></td>
-    <td><%= link_to 'Edit', edit_compiler_path(compiler) %></td>
-    <td><%= link_to 'Destroy', compiler, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @compilers.each do |compiler| %>
+      <tr>
+        <td><%= compiler.name %></td>
+        <td><%= compiler.command %></td>
+        <td><%= link_to 'Show', compiler %></td>
+        <td><%= link_to 'Edit', edit_compiler_path(compiler) %></td>
+        <td><%= link_to 'Destroy', compiler, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br /><hr />
+<br>
 
-<%= link_to 'New Compiler', new_compiler_path %> | 
-<%= link_to 'Problems', problems_path %>
+<%= link_to 'New Compiler', new_compiler_path %>

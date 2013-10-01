@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :body %><br />
+    <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
   <div class="field">
-    <%= f.label :time_limit %><br />
+    <%= f.label :time_limit %><br>
     <%= f.text_field :time_limit %>
   </div>
   <div class="field">
-    <%= f.label :examples %><br />
-    <%= f.text_area :examples %>
+    <%= f.label :memory_limit %><br>
+    <%= f.number_field :memory_limit %>
   </div>
   <div class="actions">
     <%= f.submit %>

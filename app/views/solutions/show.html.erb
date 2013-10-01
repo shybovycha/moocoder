@@ -1,24 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Problem:</b>
-  <%= @solution.problem.title %>
+  <strong>Body:</strong>
+  <pre><%= @solution.body %></pre>
 </p>
 
 <p>
-  <b>Problem:</b>
-  <%= @solution.compiler.title %>
-</p>
-
-<p>
-  <b>Code:</b>
-  <pre><%= @solution.code %></pre>
-</p>
-
-<p>
-  <b>Status:</b>
+  <strong>Status:</strong>
   <%= @solution.status %>
 </p>
 
-
-<%= link_to 'Edit', edit_solution_path(@solution) if auth? %>
+<%= link_to 'Edit', edit_solution_path(@solution) %> |
+<%= link_to 'Back', solutions_path %>
